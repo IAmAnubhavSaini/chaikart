@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/chaikart/static/css/main.05b49b87.chunk.css",
-    "main.js": "/chaikart/static/js/main.eb324c3d.chunk.js",
-    "main.js.map": "/chaikart/static/js/main.eb324c3d.chunk.js.map",
+    "main.js": "/chaikart/static/js/main.06d73a9c.chunk.js",
+    "main.js.map": "/chaikart/static/js/main.06d73a9c.chunk.js.map",
     "runtime-main.js": "/chaikart/static/js/runtime-main.4b9d4cdb.js",
     "runtime-main.js.map": "/chaikart/static/js/runtime-main.4b9d4cdb.js.map",
-    "static/js/2.d46781f0.chunk.js": "/chaikart/static/js/2.d46781f0.chunk.js",
-    "static/js/2.d46781f0.chunk.js.map": "/chaikart/static/js/2.d46781f0.chunk.js.map",
+    "static/js/2.5b87ac50.chunk.js": "/chaikart/static/js/2.5b87ac50.chunk.js",
+    "static/js/2.5b87ac50.chunk.js.map": "/chaikart/static/js/2.5b87ac50.chunk.js.map",
     "static/js/3.c40b4b8e.chunk.js": "/chaikart/static/js/3.c40b4b8e.chunk.js",
     "static/js/3.c40b4b8e.chunk.js.map": "/chaikart/static/js/3.c40b4b8e.chunk.js.map",
     "index.html": "/chaikart/index.html",
     "static/css/main.05b49b87.chunk.css.map": "/chaikart/static/css/main.05b49b87.chunk.css.map",
-    "static/js/2.d46781f0.chunk.js.LICENSE.txt": "/chaikart/static/js/2.d46781f0.chunk.js.LICENSE.txt"
+    "static/js/2.5b87ac50.chunk.js.LICENSE.txt": "/chaikart/static/js/2.5b87ac50.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4b9d4cdb.js",
-    "static/js/2.d46781f0.chunk.js",
+    "static/js/2.5b87ac50.chunk.js",
     "static/css/main.05b49b87.chunk.css",
-    "static/js/main.eb324c3d.chunk.js"
+    "static/js/main.06d73a9c.chunk.js"
   ]
 }
