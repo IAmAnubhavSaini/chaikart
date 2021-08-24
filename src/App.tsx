@@ -22,9 +22,12 @@ const initialCart: CartType = {
 };
 
 function nextCart(prevCart: any, item: any, action: string): CartType {
-    let {products, total, count} = prevCart;
+    let {products, total, count, id} = prevCart;
+    if (action === 'clear-cart') {
+        return {id, products: [], count: 0, total: 0};
+    }
     const productIndex = products.findIndex((p: any) => p.name === item.name);
-    console.log({products, productIndex, item, action});
+    // console.log({products, productIndex, item, action});
     if (action === 'add') {
         if (productIndex === -1) {
             const {quantity = 1, price, name} = item;
@@ -41,15 +44,14 @@ function nextCart(prevCart: any, item: any, action: string): CartType {
         products[productIndex] = {quantity: quantity + 1, price, name};
         count += 1;
         total += item.price;
-        return {...prevCart, products, total, count};
+        return {id, products, total, count};
     } else if (action === 'remove') {
         if (productIndex > -1) {
             const product = products[productIndex];
-            products = [...products.slice(0, productIndex), ...products.slice(productIndex + 1)];
-            console.log(products);
             count -= product.quantity;
             total -= (product.price * product.quantity);
-            return {...prevCart, products, count, total};
+            products = [...products.slice(0, productIndex), ...products.slice(productIndex + 1)];
+            return {id, products, count, total};
         }
     } else if (action === 'decrease') {
         if (productIndex > -1) {
@@ -60,10 +62,10 @@ function nextCart(prevCart: any, item: any, action: string): CartType {
             count -= 1;
             total -= product.price;
             products[productIndex] = {quantity: product.quantity - 1, ...item};
-            return {...prevCart, products, count, total};
+            return {id, products, count, total};
         }
     }
-    return {...prevCart, products, count, total};
+    return {id, products, count, total};
 }
 
 function App() {
@@ -108,8 +110,9 @@ function App() {
 
     function onClearActiveCart() {
         console.log('onClearActiveCart');
+        const cart = nextCart(activeCart, null, 'clear-cart');
+        setActiveCart(cart);
         setShowingCart(false);
-        setActiveCart(initialCart);
     }
 
     function onSuspendCart(cart: any) {
