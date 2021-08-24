@@ -30,8 +30,8 @@ function CartList(props: any) {
             })}
         </div>
         <div>
-            <span>Total: {props.total}</span>
-            <span>Count: {props.count}</span>
+            <span>Total: {props.activeCart.total}</span>
+            <span>Count: {props.activeCart.count}</span>
         </div>
         <div>
             <button onClick={() => props.cartActions.onSuspendCart(props.activeCart)}>suspend</button>

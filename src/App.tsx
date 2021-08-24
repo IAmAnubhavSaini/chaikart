@@ -27,7 +27,7 @@ function nextCart(prevCart: any, item: any, action: string): CartType {
         if (productIndex === -1) {
             const {quantity = 1, price, name} = item;
             products.push({quantity, price, name});
-            total += 1;
+            total += item.price;
             count += 1;
             return {products, total, count};
         } else {
@@ -38,7 +38,7 @@ function nextCart(prevCart: any, item: any, action: string): CartType {
         const {quantity, price, name} = product;
         products[productIndex] = {quantity: quantity + 1, price, name};
         count += 1;
-        total += 1;
+        total += item.price;
         return {products, total, count};
     } else if (action === 'remove') {
         if (productIndex > -1) {
