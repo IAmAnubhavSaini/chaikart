@@ -132,7 +132,7 @@ function App() {
 
     return (
         <div className="App">
-            <h2>ChaiKart</h2>
+            <h2 className="brand">ChaiKart</h2>
             <div className={"grid"}>
 
                 {PRODUCTS && <ProductList products={PRODUCTS} actions={{onProductAdd}}/>}
@@ -140,7 +140,8 @@ function App() {
                 <CartList activeCart={activeCart}
                           productActions={{onRemoveFromCart, onDecreaseQuantity, onIncreaseQuantity}}
                           cartActions={{onSuspendCart, onClearActiveCart}}
-                />}
+                />
+                }
                 {
                     suspendedCarts.length > 0 && <SuspendedCartList actions={{onMakeActive}} carts={suspendedCarts}/>
                 }

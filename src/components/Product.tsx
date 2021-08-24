@@ -8,6 +8,7 @@ type ProductListProps = {
 function ProductList(props: ProductListProps) {
     return (
         <div className="product-list">
+            <h2>Products</h2>
             {
                 props.products.map((product: ProductType, index: number) =>
                     <Product {...product}

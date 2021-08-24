@@ -1,11 +1,24 @@
 .App {
     padding: 1rem;
+}
 
+.brand {
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: #333;
+    text-shadow: 2px 2px 2px black;
+    transform: skewX(-7deg);
+    border-bottom: thick ridge #666;
+}
+
+h2 {
+    color: #333;
 }
 
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 50px;
 }
 
 .product .grid {
@@ -19,6 +32,7 @@
     padding: 1rem;
     margin: 1rem 0
 }
+
 .product-name,
 .cart-item {
     text-transform: capitalize;
@@ -26,14 +40,17 @@
 }
 
 button {
-    padding: .4rem 1rem;
+    padding: .5rem 1.2rem;
     margin: .4rem;
     border: none;
     cursor: pointer;
     background-color: #ccc;
+    border-radius: 4px;
+    font-weight: bold;
 }
 
 button:hover {
     outline: thin solid yellow;
-    background-color: #ddd;
+    background-color: #333;
+    color: white;
 }
