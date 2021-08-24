@@ -6,12 +6,14 @@ import {CartList} from "./components/Cart";
 import {SuspendedCartList} from "./components/SuspendedCart";
 
 type CartType = {
+    id: number;
     products: any[];
     total: number;
     count: number
 }
 
 const initialCart: CartType = {
+    id: 1,
     products: [
         {name: '', quantity: 0, price: 0}
     ],
@@ -29,7 +31,7 @@ function nextCart(prevCart: any, item: any, action: string): CartType {
             products.push({quantity, price, name});
             total += item.price;
             count += 1;
-            return {products, total, count};
+            return {...prevCart, products, total, count};
         } else {
             return nextCart(prevCart, item, 'increase');
         }
@@ -39,7 +41,7 @@ function nextCart(prevCart: any, item: any, action: string): CartType {
         products[productIndex] = {quantity: quantity + 1, price, name};
         count += 1;
         total += item.price;
-        return {products, total, count};
+        return {...prevCart, products, total, count};
     } else if (action === 'remove') {
         if (productIndex > -1) {
             const product = products[productIndex];
@@ -47,7 +49,7 @@ function nextCart(prevCart: any, item: any, action: string): CartType {
             console.log(products);
             count -= product.quantity;
             total -= (product.price * product.quantity);
-            return {products, count, total};
+            return {...prevCart, products, count, total};
         }
     } else if (action === 'decrease') {
         if (productIndex > -1) {
@@ -58,10 +60,10 @@ function nextCart(prevCart: any, item: any, action: string): CartType {
             count -= 1;
             total -= product.price;
             products[productIndex] = {quantity: product.quantity - 1, ...item};
-            return {products, count, total};
+            return {...prevCart, products, count, total};
         }
     }
-    return {products, count, total};
+    return {...prevCart, products, count, total};
 }
 
 function App() {
@@ -121,6 +123,9 @@ function App() {
     function onMakeActive(cart: any) {
         console.log('onMakeActive');
         console.log(cart);
+        // @ts-ignore
+        const findIndex = suspendedCarts.findIndex(sc => sc.id === cart.id);
+        setSuspendedCarts([...suspendedCarts.slice(0, findIndex), ...suspendedCarts.slice(findIndex + 1)]);
         setActiveCart(cart);
         setShowingCart(true);
     }
