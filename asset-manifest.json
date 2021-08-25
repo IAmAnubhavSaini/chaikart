@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/chaikart/static/css/main.efcbd8bb.chunk.css",
-    "main.js": "/chaikart/static/js/main.2c0d9ebb.chunk.js",
-    "main.js.map": "/chaikart/static/js/main.2c0d9ebb.chunk.js.map",
+    "main.js": "/chaikart/static/js/main.28ec159f.chunk.js",
+    "main.js.map": "/chaikart/static/js/main.28ec159f.chunk.js.map",
     "runtime-main.js": "/chaikart/static/js/runtime-main.4b9d4cdb.js",
     "runtime-main.js.map": "/chaikart/static/js/runtime-main.4b9d4cdb.js.map",
     "static/js/2.46277822.chunk.js": "/chaikart/static/js/2.46277822.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.4b9d4cdb.js",
     "static/js/2.46277822.chunk.js",
     "static/css/main.efcbd8bb.chunk.css",
-    "static/js/main.2c0d9ebb.chunk.js"
+    "static/js/main.28ec159f.chunk.js"
   ]
 }
